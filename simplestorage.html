@@ -1,3 +1,21 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Explore
+ @IeRae
+ Sign out
+ Watch 2
+  Unstar 63  Fork 8 atomrigs/atomrigs.github.io
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
+Branch: master Find file Copy pathatomrigs.github.io/simplestorage.html
+981c4bc  on 3 Apr
+@atomrigs atomrigs Update simplestorage.html
+1 contributor
+RawBlameHistory     
+109 lines (95 sloc)  4.13 KB
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +29,6 @@
     #newValue {width: 200px; margin-right:10px; text-align:right;}
   </style>
 </head>
-
 <body>
 <h3>Simple Storage dApp 예제</h3>
 <ul>
@@ -24,11 +41,21 @@
   <li>새 값을 저장한 후 팬딩 트랜잭션이 블록에 포함되면 자동으로 페이지가 업데이트될 것입니다.</li>
 </ul>
 
+컨트랙트 소스
+<script src="https://gist.github.com/atomrigs/7c633570496b79623bed5d1286f93f3a.js"></script>
+
+HTML 소스<br>
+<a href="https://github.com/atomrigs/atomrigs.github.io/blob/master/simplestorage.html">https://github.com/atomrigs/atomrigs.github.io/blob/master/simplestorage.html</a>
+<br><br>
+<p>
+<a href="http://www.chaintalk.io/archive/lecture?sca=%EB%82%98%EB%8F%84+dApp+%EA%B0%9C%EB%B0%9C"><i>나도 dApp 개발해 보자 시리즈 by Atomrigs © 2017</i></a>
+</p>
+
 </body>
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 <!-- script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script -->
 <script>
-var contractAddress = '0x6733f8799F7C79bC15E0003e58159e60382429d3';
+var contractAddress = '0xde856446a16a7c24a9819767be3d05583aa3063d';
 var abi = [{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"}];
 var simpleStorageContract;
 var simpleStorage;
