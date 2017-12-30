@@ -39,7 +39,7 @@ window.onload = function () {
 
               window.web3 = new Web3(web3.currentProvider);
 				
-			  content = { dev1 : "\"" + document.getElementById('receive_contents').value + "\"", dev2 :  "working" };
+			  content = { dev1 : "" + document.getElementById('receive_contents').value + "", dev2 :  "working" };
 			  console.log(content);
               sendMessage = web3.eth.contract(abi).at(contractAddress);
               sendMessage.set_data(address, JSON.stringify(content), {gasPrice:web3.toWei(2, 'Gwei')}, function(e,r) {
