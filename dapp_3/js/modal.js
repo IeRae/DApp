@@ -69,7 +69,7 @@ window.onload = function () {
 var content;
       window.web3 = new Web3(web3.currentProvider);
       message = web3.eth.contract(abi).at(contractAddress);
-
+console.log(message);
       message.getMsg(function(e,r) {
 		content = JSON.parse(message);
 		console.log(content);
