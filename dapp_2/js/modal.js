@@ -42,7 +42,7 @@ window.onload = function () {
 			  content = { dev1 : "\"" + document.getElementById('receive_contents').value + "\"", dev2 :  "working" };
 			  console.log(content);
               sendMessage = web3.eth.contract(abi).at(contractAddress);
-              sendMessage.set(address, JSON.stringify(content), {gasPrice:web3.toWei(2, 'Gwei')}, function(e,r) {
+              sendMessage.set_data(address, JSON.stringify(content), {gasPrice:web3.toWei(2, 'Gwei')}, function(e,r) {
 
                 alert("TXID Copy to clipboard: Ctrl+C, Enter\n" + r);
 
@@ -70,7 +70,7 @@ window.onload = function () {
       window.web3 = new Web3(web3.currentProvider);
       return_str = web3.eth.contract(abi).at(contractAddress);
 
-      return_str.get(function(e,r) {
+      return_str.get_data(function(e,r) {
 		content = JSON.parse(return_str);
 		console.log(content);
         document.getElementById('send_address').value = content.sender;

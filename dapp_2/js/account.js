@@ -14,7 +14,7 @@ setInterval(function() {
     window.web3 = new Web3(web3.currentProvider);
     message = web3.eth.contract(abi).at(contractAddress);
     
-    message.get(function(e,r) {
+    message.get_data(function(e,r) {
 
         if(Number(blockNumber) != r[0]) {
 
