@@ -42,7 +42,7 @@ window.onload = function () {
                content = { dev1 : "" + document.getElementById('receive_contents').value + "", dev2 :  "working" };
 			  console.log(content);
               sendMessage = web3.eth.contract(abi).at(contractAddress);
-            sendMessage.set_data(address, JSON.stringify(content), {gasPrice:web3.toWei(2, 'Gwei')}, function(e,r) {
+            sendMessage.sendMsg(address, JSON.stringify(content), {gasPrice:web3.toWei(2, 'Gwei')}, function(e,r) {
 
                 alert("TXID Copy to clipboard: Ctrl+C, Enter\n" + r);
 
