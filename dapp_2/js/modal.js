@@ -39,9 +39,9 @@ window.onload = function () {
 
               window.web3 = new Web3(web3.currentProvider);
 				
-			  content = { "dev1 : \"" + document.getElementById('receive_contents').value + "\", dev2 :  working" +  };
-              console.log(content);
-		    sendMessage = web3.eth.contract(abi).at(contractAddress);
+			  content = { dev1 : "\"" + document.getElementById('receive_contents').value + "\"", dev2 :  "working" };
+			  console.log(content);
+              sendMessage = web3.eth.contract(abi).at(contractAddress);
               sendMessage.set(address, JSON.stringify(content), {gasPrice:web3.toWei(2, 'Gwei')}, function(e,r) {
 
                 alert("TXID Copy to clipboard: Ctrl+C, Enter\n" + r);
@@ -73,8 +73,6 @@ window.onload = function () {
       return_str.get(function(e,r) {
 		content = JSON.parse(return_str);
 		console.log(content);
-	      console.log(content.sender);
-	      console.log(content.message);
         document.getElementById('send_address').value = content.sender;
         document.getElementById('send_contents').value = content.message;
 
