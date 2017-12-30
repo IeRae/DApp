@@ -33,7 +33,7 @@ window.onload = function () {
             if(address.search(/0x[a-zA-Z0-9]{40}/) != -1) {
         
               var contractAddress = '0xb20083039a3b7b76c0dc3884c6e5f41c3784671d';
-              var abi = [{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"newMessage","type":"string"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"address"},{"name":"","type":"string"},{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"}];
+              var abi = [{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"newMessage","type":"string"}],"name":"set_data","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get_data","outputs":[{"name":"","type":"address"},{"name":"","type":"string"},{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"}];
               var sendMessage;
 			  var content;
 
@@ -64,7 +64,7 @@ window.onload = function () {
     receiveModalBtn.addEventListener('click', function(e) {
 
       var contractAddress = '0xb20083039a3b7b76c0dc3884c6e5f41c3784671d';
-      var abi = [{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"newMessage","type":"string"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"address"},{"name":"","type":"string"},{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"}];
+      var abi = [{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"newMessage","type":"string"}],"name":"set_data","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get_data","outputs":[{"name":"","type":"address"},{"name":"","type":"string"},{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"}];
       var return_str;
 	  var content;
       window.web3 = new Web3(web3.currentProvider);
