@@ -2,8 +2,8 @@ var blockNumber = 0;
 var savedAddress = "";
 var savedBalances = 0;
 
-var user_address = 0x6733f8799f7c79bc15e0003e58159e60382429d3;
-var dev1_address = 0x6733f8799f7c79bc15e0003e58159e6038242922;
+//var user_address = 0x6733f8799f7c79bc15e0003e58159e60382429d3;
+//var dev1_address = 0x6733f8799f7c79bc15e0003e58159e6038242922;
 //var dev2_address = 0xb462780cf95fe8c93025978302c32a2749eac9af;
 //var dev3_address = 0xb462780cf95fe8c93025978302c32a2749eacssd;
 
