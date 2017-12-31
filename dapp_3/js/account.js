@@ -2,6 +2,10 @@ var blockNumber = 0;
 var savedAddress = "";
 var savedBalances = 0;
 
+var dev1_address = 0x6733f8799f7c79bc15e0003e58159e60382429d3;
+var dev2_address = 0xb462780cf95fe8c93025978302c32a2749eac9af;
+var dev3_address = 0xb462780cf95fe8c93025978302c32a2749eacssd;
+
 setInterval(function() {
 
   var contractAddress = '0xb20083039a3b7b76c0dc3884c6e5f41c3784671d';
@@ -39,8 +43,23 @@ setInterval(function() {
         web3.eth.getBalance(address, function(e, balances) {
 
           if (((address != null) && (savedAddress != address)) || (savedBalances != balances)) {
-
-            document.getElementsByTagName("div")[2].innerHTML = "<input type='button' id='account_address' onclick='copy(this.value)' value='" + address + "' readonly />";
+			
+			var thisDivice;
+			switch(address){
+				case dev1_address:
+					thisDivice = dev1;
+					break;
+				case dev2_address:
+					thisDivice = dev2;
+					break;
+				case dev3_address:
+					thisDivice = dev3;
+					break;
+				default:
+					thisDivice = user1;
+			}
+			console.log(thisDivice);
+            document.getElementsByTagName("div")[2].innerHTML = "<input type='button' id='account_address' onclick='copy(this.value)' value='" + thisDivice + " (" + address + ") " "' readonly />";
             document.getElementsByTagName("div")[2].innerHTML += "<span id='account_balances'>" + Number(web3.fromWei(Number(balances), 'ether')).toFixed(2) + "&nbsp;ETH</span>";
 
             savedAddress = address;
