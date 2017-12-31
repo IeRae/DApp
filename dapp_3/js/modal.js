@@ -71,6 +71,7 @@ var content;
       message = web3.eth.contract(abi).at(contractAddress);
 console.log(message);
       message.getMsg(function(e,r) {
+		  console.log(r[2]);
 		content = JSON.parse(r[2]);
 		console.log(content);
         document.getElementById('send_address').value = content.dev1;
