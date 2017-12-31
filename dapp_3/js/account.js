@@ -2,7 +2,8 @@ var blockNumber = 0;
 var savedAddress = "";
 var savedBalances = 0;
 
-var dev1_address = 0x6733f8799f7c79bc15e0003e58159e60382429d3;
+var user_address = 0x6733f8799f7c79bc15e0003e58159e60382429d3;
+var dev1_address = 0x6733f8799f7c79bc15e0003e58159e6038242922;
 var dev2_address = 0xb462780cf95fe8c93025978302c32a2749eac9af;
 var dev3_address = 0xb462780cf95fe8c93025978302c32a2749eacssd;
 
@@ -41,9 +42,9 @@ setInterval(function() {
     web3.eth.getCoinbase(function(e, address) {
 
         web3.eth.getBalance(address, function(e, balances) {
-
+console.log("test1");
           if (((address != null) && (savedAddress != address)) || (savedBalances != balances)) {
-			
+console.log("test2");			
 			var thisDivice;
 			switch(address){
 				case dev1_address:
@@ -61,7 +62,7 @@ setInterval(function() {
 			console.log(thisDivice);
             document.getElementsByTagName("div")[2].innerHTML = "<input type='button' id='account_address' onclick='copy(this.value)' value='" + thisDivice + " (" + address + ") " "' readonly />";
             document.getElementsByTagName("div")[2].innerHTML += "<span id='account_balances'>" + Number(web3.fromWei(Number(balances), 'ether')).toFixed(2) + "&nbsp;ETH</span>";
-
+console.log("test1");
             savedAddress = address;
             savedBalances = balances;
             
