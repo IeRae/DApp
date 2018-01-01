@@ -9,7 +9,7 @@ var dev3_address = '0xd029FeeeD0Dbb6FD60128aaE6e591962df11E76f';
 
 setInterval(function() {
 
-  var contractAddress = '0x6733f8799f7c79bc15e0003e58159e60382429d3';
+  var contractAddress = '0xad7b2515430e096cde15673874ae4a9d3b8619f6';
   var abi = [{"constant":false,"inputs":[{"name":"target","type":"address"},{"name":"text","type":"string"}],"name":"senMsg","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getMsg","outputs":[{"name":"","type":"address"},{"name":"","type":"string"},{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"}];
   var message;
   var content;
@@ -47,16 +47,7 @@ console.log(r[1]);
 		}
 		
     });
-/*
-    if (document.getElementById('send_modal').style.visibility == "") {
 
-      document.getElementById('send_modal').style.visibility = "visible";
-      document.getElementById('send_form').style.visibility = "visible";
-      document.getElementById('receive_modal').style.visibility = "visible";
-      document.getElementById('receive_form').style.visibility = "visible";
-
-    }
-*/
     web3.eth.getCoinbase(function(e, address) {
 
         web3.eth.getBalance(address, function(e, balances) {
