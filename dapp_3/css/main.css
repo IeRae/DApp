@@ -17,6 +17,7 @@
 body {
 
     background-color:#4E8EE9;
+	float: left;
 
 }
 
@@ -30,26 +31,54 @@ a {
  Message Form Style
 */
 
-#send_modal, #receive_modal {
+#state_btn{
+    width: 86%;
+    height: 37%;
+    background: white;
+    position: absolute;
+	float:left;
+    top: 87%;
+    left: 20%;
+    margin-top: -200px;
+    margin-left: -250px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
 
-    display: inline-block;
-    background: #354863;
+#working_state{
+	font-size: 3em;
+}
 
-    position:absolute;
+#other_device_info{
+    background: #4E8EE9;
+    width: 51%;
+    height: 75%;
+    position: absolute;
+    top: 12.5%;
+    left: 67%;
+    transform: translateX(-50%);
+    border-radius: 4px;
+	color: white;
+	text-align: -webkit-center;
+	font-size: 1.5em
+	
+}
 
-    width:50px;
-    height:50px;
+#other_device_info spen{
+	margin-top: 10px;
+}
 
-    border: none;
-    border-radius: 100%;
-
-    top:15px;
-    right:15px;
-
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
-
-    visibility:hidden;
-
+.send_modal{
+	
+    background: #4E8EE9;
+    width: 25%;
+    height: 75%;
+    position: relative;
+    top: 12.5%;
+    margin-left: 3%;
+    left: 20%;
+    transform: translateX(-50%);
+    border-radius: 4px;
 }
 
 #send_modal_img, #send_img{
@@ -248,24 +277,25 @@ a {
 */
 
 .account_form {
-    width: 700px;
-    height: 242px;
+    width: 86%;
+    height: 37%;
     background: white;
     position: absolute;
     top: 28%;
-    left: 43%;
+    left: 20%;
     margin-top: -200px;
     margin-left: -250px;
     border-radius: 5px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-.user_form{
-	width: 700px;
-    height: 242px;
+#user_form{
+	visibility: hidden;
+	width: 86%;
+    height: 37%;
     background: white;
     position: absolute;
     top: 57%;
-    left: 43%;
+    left: 20%;
     margin-top: -200px;
     margin-left: -250px;
     border-radius: 5px;

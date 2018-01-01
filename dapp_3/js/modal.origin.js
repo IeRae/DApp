@@ -1,61 +1,5 @@
 window.onload = function () {
 
-console.log('modal start')
-
-  var sendBtn_1 = document.getElementById('send_dev_1');
-  var sendBtn_2 = document.getElementById('send_dev_2');
-  var sendBtn_3 = document.getElementById('send_dev_3');
-
-  var contractAddress = '0xb20083039a3b7b76c0dc3884c6e5f41c3784671d';
-  var abi = [{"constant":false,"inputs":[{"name":"_receiver","type":"address"},{"name":"_message","type":"string"}],"name":"sendMsg","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"getMsg","outputs":[{"name":"","type":"uint256"},{"name":"","type":"address"},{"name":"","type":"string"},{"name":"","type":"bool"}],"payable":false,"type":"function"}];
-  var message;
-  var getcontent;
-  var setcontent;
-  
-  //  for (var i = 0; i < sendBtn_1.length; i++) {
-		console.log('device 1 start')
-		function send_dev_1(){
-			
-			var address = contractAddress;
-        		console.log('device etx start')
-            if(address.search(/0x[a-zA-Z0-9]{40}/) != -1) {
-        		console.log('device 2 start')
-              window.web3 = new Web3(web3.currentProvider);
-			  message = web3.eth.contract(abi).at(contractAddress);
-
-			  getcontent = JSON.parse(r[2]);
-			  
-			  if(getcontent.dev1 == 'working')
-				  getcontent.dev1 = 'stop';
-			  else
-				  getcontent.dev1 = 'working';
-			  
-			  setcontent = { dev1 : "" + getcontent.dev1 + "", dev2 :  "" + getcontent.dev2 + "", dev3 : "" + getcontent.dev3 + ""};
-			  
-			  /*
-               content = { dev1 : "" + document.getElementById('receive_contents').value + "", dev2 :  "working" };
-			   */
-			   console.log('device 3 start')
-			  console.log(setcontent);
-			  Message.sendMsg(address, JSON.stringify(content), {gasPrice:web3.toWei(2, 'Gwei')}, function(e,r) {
-
-                alert("TXID Copy to clipboard: Ctrl+C, Enter\n" + r);
-
-              });
-
-              
-              
-
-            }
-            else {
-        
-                alert('Please, recheck your sending address.');
-
-             }
-		}
-   //}
-};
-  /*
   var sendModalBtn = document.getElementById('send_modal');
   var sendBtns = document.querySelectorAll('.send');
   var sendCloseBtns = document.querySelectorAll('.send_form_close');
@@ -151,4 +95,4 @@ console.log(message);
   }
   
 };
-*/
+
