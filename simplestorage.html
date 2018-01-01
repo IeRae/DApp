@@ -23,15 +23,27 @@
   <li>새 값을 저장한 후 팬딩 트랜잭션이 블록에 포함되면 자동으로 페이지가 업데이트될 것입니다.</li>
 </ul>
 
+컨트랙트 소스
+<script src="https://gist.github.com/atomrigs/7c633570496b79623bed5d1286f93f3a.js"></script>
+
+HTML 소스<br>
+<a href="https://github.com/atomrigs/atomrigs.github.io/blob/master/simplestorage.html">https://github.com/atomrigs/atomrigs.github.io/blob/master/simplestorage.html</a>
+<br><br>
+<p>
+<a href="http://www.chaintalk.io/archive/lecture?sca=%EB%82%98%EB%8F%84+dApp+%EA%B0%9C%EB%B0%9C"><i>나도 dApp 개발해 보자 시리즈 by Atomrigs © 2017</i></a>
+</p>
+
 </body>
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 <!-- script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script -->
 <script>
-var contractAddress = '0xde856446a16a7c24a9819767be3d05583aa3063d';
+var contractAddress = '0x6733f8799F7C79bC15E0003e58159e60382429d3';
 var abi = [{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"}];
 var simpleStorageContract;
 var simpleStorage;
+
 window.addEventListener('load', function() {
+
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {
     // Use Mist/MetaMask's provider
@@ -44,6 +56,7 @@ window.addEventListener('load', function() {
   // Now you can start your app & access web3 freely:
   startApp();
 });
+
 function startApp() {
   simpleStorageContract = web3.eth.contract(abi);
   simpleStorage = simpleStorageContract.at(contractAddress);
@@ -51,20 +64,26 @@ function startApp() {
   web3.eth.getAccounts(function(e,r){
     document.getElementById('accountAddr').innerHTML = getLink(r[0]);
   });
+
   getValue();
 }
+
 function getLink(addr) {
-  return '<a target="_blank" href=https://testnet.etherscan.io/address/' + addr + '>' + addr +'</a>';
+  return '<a target="_blank" href=https://ropsten.etherscan.io/address/' + addr + '>' + addr +'</a>';
 }
+
 function getValue() {
   simpleStorage.get(function(e,r){
     document.getElementById('storedData').innerHTML=r.toNumber();
+
   });
   web3.eth.getBlockNumber(function(e,r){
     document.getElementById('lastBlock').innerHTML = r;
   });
 }
+
 function setValue() {
+
   var newValue = document.getElementById('newValue').value;
   var txid
   simpleStorage.set(newValue, function(e,r){
@@ -84,5 +103,6 @@ function setValue() {
    });
  });
 }
+
 </script>
 </html>
